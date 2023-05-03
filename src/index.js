@@ -26,10 +26,6 @@ app.get('/news', (req, res) => {
     res.render('news');
 });
 
-app.get('/', (req, res) => {
-    res.send('123')
-})
-
 app.listen(port, () =>
     console.log(`Example app listening on port ${port}`))
 
@@ -45,3 +41,7 @@ app.listen(port, () =>
     // node-sass
         // watch --watch
         // --output
+
+// git add . -> git commit -m ""
+
+// Routing - Tuyen duong /...
