@@ -10,7 +10,7 @@ app.use(morgan('combined'));
 
 // Middleware
 app.use(express.urlencoded({
-    extended: true // Xu ly loi body-parser extended
+    extended: true // Xu ly loi body-parser extended.
 }));
 app.use(express.json());
 
