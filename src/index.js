@@ -8,6 +8,12 @@ const port = 3000
 // HTTP logger
 app.use(morgan('combined'));
 
+// Middleware
+app.use(express.urlencoded({
+    extended: true // Xu ly loi body-parser extended
+}));
+app.use(express.json());
+
 // Template engine
 app.engine('hbs', hbs.engine({              // hbs() -> hbs.engine(...)
     extname: '.hbs'                        // Doi duoi file tu '.handlebars' -> '.hbs'
@@ -27,8 +33,14 @@ app.get('/news', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-    // req.query.q     Lay query (tu khoa)
+    // req.query.q     // Lay query (tu khoa)
     res.render('search');
+});
+
+// Tuyen duong lan nghe phuong thuc POST tai /search
+app.post('/search', (req, res) => {
+    // console.log(req.body.q) // Lay query tai post
+    res.send('');
 });
 
 app.listen(port, () =>
