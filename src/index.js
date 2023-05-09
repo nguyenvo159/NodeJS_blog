@@ -59,7 +59,7 @@ app.listen(port, () =>
         // watch --watch
         // --output
 
-// git add . -> git commit -m ""
+// git add . -> git commit -m "" -> git push orgin main
 
 // Routing - Tuyen duong /...
 
