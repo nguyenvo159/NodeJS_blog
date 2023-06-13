@@ -5,6 +5,8 @@ const hbs = require('express-handlebars');
 const app = express()
 const port = 3000
 
+const route = require('./routes');
+
 // HTTP logger
 app.use(morgan('combined'));
 
@@ -24,24 +26,10 @@ app.set('views', path.join(__dirname, 'resources/views'))
 // Static PNG
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
+// Route 
+route(app);
 
-app.get('/news', (req, res) => {
-    res.render('news');
-});
-
-app.get('/search', (req, res) => {
-    // req.query.q     // Lay query (tu khoa)
-    res.render('search');
-});
-
-// Tuyen duong lan nghe phuong thuc POST tai /search
-app.post('/search', (req, res) => {
-    // console.log(req.body.q) // Lay query tai post
-    res.send('');
-});
+// Home, search, contact
 
 app.listen(port, () =>
     console.log(`Example app listening on port ${port}`))
@@ -64,3 +52,7 @@ app.listen(port, () =>
 // Routing - Tuyen duong /...
 
 // Parameters
+
+//Route
+        // Nếu page có nhiều thành phần như news thì tách riêng NewsController và news.js
+        // Nếu page ít hoặc duy nhất như home, search thì gộp chung SiteController và site.js
