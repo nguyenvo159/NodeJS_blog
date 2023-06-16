@@ -1,4 +1,3 @@
-
 class SiteController {
     // GET /
     index(req, res) {
@@ -11,6 +10,6 @@ class SiteController {
     }
 }
 
-module.exports = new SiteController;
+module.exports = new SiteController();
 
 // const newsController = require('./newsController')

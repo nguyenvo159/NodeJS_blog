@@ -11,5 +11,4 @@ router.use('/:slug', newsController.show);
 // Truong hop / dau tien
 router.use('/', newsController.index);
 
-
 module.exports = router;
