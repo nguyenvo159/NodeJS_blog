@@ -21,12 +21,12 @@ app.use(express.json());
 // Template engine
 app.engine(
     'hbs',
-        hbs.engine({
+    hbs.engine({
         // hbs() -> hbs.engine(...)
         extname: '.hbs', // Doi duoi file tu '.handlebars' -> '.hbs'
-        }),
+    }),
 );
-    app.set('view engine', 'hbs');
+app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
 // Static PNG
