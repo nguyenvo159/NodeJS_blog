@@ -6,6 +6,10 @@ const app = express();
 const port = 3000;
 
 const route = require('./routes');
+const db = require('./config/db');
+
+// Connect Database
+db.connect();
 
 // HTTP logger
 app.use(morgan('combined'));
@@ -69,3 +73,6 @@ app.listen(port, () => console.log(`Example app listening on port ${port}`));
 //     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
 //   },
 // "beatiful": "lint-staged"
+
+
+// Model
