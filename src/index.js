@@ -31,7 +31,7 @@ app.engine(
     }),
 );
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
 // Static PNG
 app.use(express.static(path.join(__dirname, 'public')));
@@ -41,7 +41,7 @@ route(app);
 
 // Home, search, contact
 
-app.listen(port, () => console.log(`Example app listening on port ${port}`));
+app.listen(port, () => console.log(`App listening on port ${port}`));
 
 // packet.json -> script: them start:
 // nodemon index.js -> npm start
@@ -73,6 +73,5 @@ app.listen(port, () => console.log(`Example app listening on port ${port}`));
 //     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
 //   },
 // "beatiful": "lint-staged"
-
 
 // Model

@@ -6,9 +6,9 @@ const newsController = require('../app/controllers/NewsController');
 // newsController.index;
 
 //Truong hop /.. ngoai le
-router.use('/:slug', newsController.show);
+router.get('/:slug', newsController.show);
 
 // Truong hop / dau tien
-router.use('/', newsController.index);
+router.get('/', newsController.index);
 
 module.exports = router;
